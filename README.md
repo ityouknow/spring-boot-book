@@ -8,7 +8,7 @@
 
 * [Github托管地址](https://github.com/ityouknow/spring-boot-book)
 
-* 本文对应的示例代码：\[spring-boot-examples\]\(https://github.com/ityouknow/spring-boot-examples\)
+* 本文对应的示例代码：[https://github.com/ityouknow/spring-boot-examples](https://github.com/ityouknow/spring-boot-examples\)
 
 * 欢迎大家加入 Spring Boot 交流群，群号：**755543204**，暗号：springboot
 
