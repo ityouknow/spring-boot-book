@@ -287,10 +287,10 @@ Receiver object : User{name='neo', pass='123456'}
 
 **Topic Exchange**
 
-topic 是RabbitMQ中最灵活的一种方式，可以根据routing_key自由的绑定不同的队列
+topic 是 RabbitMQ 中最灵活的一种方式，可以根据 routing_key 自由的绑定不同的队列
 
 
-首先对topic规则配置，这里使用两个队列来测试
+首先对 topic 规则配置，这里使用两个队列来测试
 
 ``` java
 @Configuration
@@ -327,7 +327,7 @@ public class TopicRabbitConfig {
 ```
 
 
-使用queueMessages同时匹配两个队列，queueMessage只匹配"topic.message"队列
+使用 queueMessages 同时匹配两个队列，queueMessage 只匹配 "topic.message" 队列
 
 ``` java
 public void send1() {
@@ -343,13 +343,11 @@ public void send2() {
 }
 ```
 
-发送send1会匹配到topic.#和topic.message 两个Receiver都可以收到消息，发送send2只有topic.#可以匹配所有只有Receiver2监听到消息
-
-
+发送 send1 会匹配到 topic.# 和 topic.message 两个 Receiver 都可以收到消息，发送 send2 只有 topic.# 可以匹配所有只有 Receiver2 监听到消息
 
 **Fanout Exchange**
 
-Fanout 就是我们熟悉的广播模式或者订阅模式，给Fanout交换机发送消息，绑定了这个交换机的所有队列都收到这个消息。
+Fanout 就是我们熟悉的广播模式或者订阅模式，给 Fanout 交换机发送消息，绑定了这个交换机的所有队列都收到这个消息。
 
 Fanout 相关配置
 
@@ -395,7 +393,7 @@ public class FanoutRabbitConfig {
 }
 ```
 
-这里使用了A、B、C三个队列绑定到Fanout交换机上面，发送端的routing_key写任何字符都会被忽略：
+这里使用了 A、B、C 三个队列绑定到 Fanout 交换机上面，发送端的 routing_key 写任何字符都会被忽略：
 
 ``` java
 public void send() {
@@ -415,4 +413,4 @@ fanout Receiver A  : hi, fanout msg
 fanout Receiver C: hi, fanout msg 
 ```
 
-结果说明，绑定到fanout交换机上面的队列都收到了消息
+结果说明，绑定到 fanout 交换机上面的队列都收到了消息
